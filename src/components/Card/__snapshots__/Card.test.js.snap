@@ -5,7 +5,36 @@ exports[`Card component matches the snapshot 1`] = `
   <li
     class="card"
   >
-    Card
+    <div
+      class="img"
+      style="background-image: url(http://www.pngmart.com/files/3/BMW-M3-Transparent-Background.png);"
+    />
+    <div
+      class="info"
+    >
+      <h3>
+        BMW 328ci
+      </h3>
+      <p>
+        12000
+      </p>
+      <p>
+        active
+      </p>
+    </div>
+    <div
+      class="progress"
+    >
+      34
+    </div>
+    <div
+      class="details"
+    />
+    <button
+      class="toggle"
+    >
+      View details
+    </button>
   </li>
 </div>
 `;

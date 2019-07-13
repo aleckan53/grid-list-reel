@@ -1,7 +1,43 @@
-$border: var(--black30);
+$black30: var(--black30);
+$border: var(--border);
 
 .card {
   list-style: none;
   background: white;
-  border: 1px solid $border;
+  border: $border $black30;
+
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  grid-template-rows: auto 0% 20%;
+  grid-column-gap: 1rem;
+  grid-row-gap: .5rem;
+  padding: 1rem;
+  grid-template-areas: "img info progress"
+                       "details details details"
+                       ". expand .";
+
+  .img {
+    grid-area: img;
+    border: $border $black30;
+  }
+
+  .info {
+    grid-area: info;
+  }
+
+  .progress {
+    grid-area: progress;
+  }
+
+  .details {
+    grid-area: details;
+    height: 500px;
+    width: 100%;
+    display: none;
+  }
+
+  .toggle {
+    grid-area: expand;
+    text-align: center;
+  }
 }

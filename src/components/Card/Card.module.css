@@ -1,6 +1,52 @@
 .card {
   list-style: none;
   background: white;
-  border: 1px solid var(--black30);
+  border: var(--border) var(--black30);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% auto 25%;
+      grid-template-columns: 25% auto 25%;
+  -ms-grid-rows: auto 0% 20%;
+      grid-template-rows: auto 0% 20%;
+  grid-column-gap: 1rem;
+  grid-row-gap: .5rem;
+  padding: 1rem;
+      grid-template-areas: "img info progress" "details details details" ". expand .";
+}
+
+.card .img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: img;
+  border: var(--border) var(--black30);
+}
+
+.card .info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: info;
+}
+
+.card .progress {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: progress;
+}
+
+.card .details {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: details;
+  height: 500px;
+  width: 100%;
+  display: none;
+}
+
+.card .toggle {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: expand;
+  text-align: center;
 }
 /*# sourceMappingURL=Card.module.css.map */
