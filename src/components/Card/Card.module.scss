@@ -3,6 +3,7 @@ $black50: var(--black50);
 $border: var(--border);
 $border-radius: var(--border-radius);
 $shadow: var(--shadow);
+$padding: 1rem;
 
 .card {
   list-style: none;
@@ -10,14 +11,14 @@ $shadow: var(--shadow);
   border: $border $black30;
   border-radius: $border-radius;
   box-shadow: $shadow $black30;
-  margin-bottom: 1rem;
+  margin-bottom: $padding;
 
   display: grid;
   grid-template-columns: 25% auto 25%;
   grid-template-rows: 80px 0% auto;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-  padding: 1rem;
+  grid-column-gap: $padding;
+  grid-row-gap: $padding;
+  padding: $padding;
   grid-template-areas: "img info progress"
                        "details details details"
                        "expand expand expand";
@@ -68,7 +69,7 @@ $shadow: var(--shadow);
     p {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1rem;
+      margin-bottom: $padding;
     }
 
     button {
