@@ -3,7 +3,7 @@ import styles from './Card.module.css';
 
 export default function Card() {
 
-  const [viewDeatils, setViewDetials] = useState(true);
+  const [viewDeatils, setViewDetials] = useState(false);
 
   const bgImage = {
     backgroundImage: `url(${data.img})`,
@@ -11,7 +11,6 @@ export default function Card() {
 
   return (
     <li className={`${styles.card } ${!viewDeatils? '' : styles.expand}`}>
-
       <div className={ styles.img } style={ bgImage }/>
       <div className={ styles.info }>
         <h3>{ data.name }</h3>
@@ -23,10 +22,10 @@ export default function Card() {
       </div>
       <div 
         className={`${styles.details } ${!viewDeatils? '' : styles.expand}`}>
-        <p><span>Start date</span><span>{ data.started }</span></p>    
-        <p><span>Estimated finsh date</span><span>{ data.started }</span></p>    
-        <p><span>$ per day</span><span>{ data.perDay }</span></p>    
-        <p><span>Days left</span><span>{ 12 }</span></p>  
+        <p><span>Days left:</span><span>{ 12 }</span></p>  
+        <p><span>$ per day:</span><span>${ data.perDay }</span></p>    
+        <p><span>Start date:</span><span>{ data.started }</span></p>    
+        <p><span>Estimated finsh date:</span><span>{ data.started }</span></p>    
         <button>Save faster</button>  
         <button>Pause</button>  
       </div>

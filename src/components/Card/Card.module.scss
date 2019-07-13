@@ -1,28 +1,37 @@
 $black30: var(--black30);
+$black50: var(--black50);
 $border: var(--border);
+$border-radius: var(--border-radius);
+$shadow: var(--shadow);
 
 .card {
   list-style: none;
   background: white;
   border: $border $black30;
+  border-radius: $border-radius;
+  box-shadow: $shadow $black30;
 
   display: grid;
   grid-template-columns: 25% auto 25%;
-  grid-template-rows: 100px 0% auto;
+  grid-template-rows: 80px 0% auto;
   grid-column-gap: 1rem;
-  grid-row-gap: .5rem;
+  grid-row-gap: 1rem;
   padding: 1rem;
   grid-template-areas: "img info progress"
                        "details details details"
-                       ". expand .";
+                       "expand expand expand";
 
   &.expand {
-    grid-template-rows: 100px auto auto;
+    grid-template-rows: 80px auto auto;
   }
 
   .img {
     grid-area: img;
     border: $border $black30;
+    border-radius: 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .info {
@@ -33,7 +42,7 @@ $border: var(--border);
     font-size: .8rem;
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 5vw;
     }
   }
 
@@ -41,12 +50,14 @@ $border: var(--border);
     grid-area: progress;
     display: grid;
     place-content: center;
+    font-size: 2rem;
   }
 
   .details {
     grid-area: details;
     width: 100%;
     display: none;
+    margin-top: .5rem;
 
     &.expand {
       display: block;
@@ -64,8 +75,10 @@ $border: var(--border);
       height: 30px;
       border: $border $black30;
       background: transparent;
+      border-radius: 10px;
 
       &:nth-of-type(2) {
+        margin: .5rem 0 1rem;
         color: gray;
       }
     }
@@ -73,6 +86,21 @@ $border: var(--border);
 
   .toggle {
     grid-area: expand;
-    text-align: center;
-  }
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    position: relative;
+    outline: none;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: $black30;
+      position: absolute;
+      left: 0;
+      top: -1rem;
+    }
+}
 }
