@@ -1,4 +1,7 @@
+$border: var(--black30);
+
 .card {
   list-style: none;
-  background: red;
+  background: white;
+  border: 1px solid $border;
 }

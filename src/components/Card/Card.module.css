@@ -1,5 +1,6 @@
 .card {
   list-style: none;
-  background: red;
+  background: white;
+  border: 1px solid var(--black30);
 }
 /*# sourceMappingURL=Card.module.css.map */
