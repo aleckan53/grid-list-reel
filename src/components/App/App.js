@@ -5,8 +5,6 @@ function App() {
   return (
     <div className="App">
       <Card/>
-      <Card/>
-      <Card/>
     </div>
   );
 }

@@ -32,6 +32,7 @@ $shadow: var(--shadow);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
   }
 
   .info {
@@ -70,15 +71,13 @@ $shadow: var(--shadow);
     }
 
     button {
-      display: block;
-      width: 100%;
+      width: 45%;
       height: 30px;
       border: $border $black30;
       background: transparent;
       border-radius: 10px;
-
       &:nth-of-type(2) {
-        margin: .5rem 0 1rem;
+        margin: .5rem 0 1rem 10%;
         color: gray;
       }
     }

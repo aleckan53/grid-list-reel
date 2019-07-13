@@ -3,7 +3,7 @@
 exports[`Card component matches the snapshot 1`] = `
 <div>
   <li
-    class="card"
+    class="card "
   >
     <div
       class="img"
@@ -16,7 +16,10 @@ exports[`Card component matches the snapshot 1`] = `
         BMW 328ci
       </h3>
       <p>
+        $
         12000
+         of $
+        35000
       </p>
       <p>
         active
@@ -28,8 +31,48 @@ exports[`Card component matches the snapshot 1`] = `
       34
     </div>
     <div
-      class="details"
-    />
+      class="details "
+    >
+      <p>
+        <span>
+          Days left:
+        </span>
+        <span>
+          12
+        </span>
+      </p>
+      <p>
+        <span>
+          $ per day:
+        </span>
+        <span>
+          $
+          15
+        </span>
+      </p>
+      <p>
+        <span>
+          Start date:
+        </span>
+        <span>
+          2017-5-1
+        </span>
+      </p>
+      <p>
+        <span>
+          Estimated finsh date:
+        </span>
+        <span>
+          2017-5-1
+        </span>
+      </p>
+      <button>
+        Save faster
+      </button>
+      <button>
+        Pause
+      </button>
+    </div>
     <button
       class="toggle"
     >
