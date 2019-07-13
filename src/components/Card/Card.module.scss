@@ -10,6 +10,7 @@ $shadow: var(--shadow);
   border: $border $black30;
   border-radius: $border-radius;
   box-shadow: $shadow $black30;
+  margin-bottom: 1rem;
 
   display: grid;
   grid-template-columns: 25% auto 25%;
@@ -101,5 +102,5 @@ $shadow: var(--shadow);
       left: 0;
       top: -1rem;
     }
-}
+  }
 }

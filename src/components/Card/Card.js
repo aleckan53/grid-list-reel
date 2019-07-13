@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Card.module.css';
 
-export default function Card() {
+export default function Card({data}) {
 
   const [viewDeatils, setViewDetials] = useState(false);
 
@@ -35,17 +35,5 @@ export default function Card() {
         {viewDeatils ? 'Hide details' : 'View details'}
       </button>
     </li>
-  )
-}
-
-
-const data = {
-  img: 'http://www.pngmart.com/files/3/BMW-M3-Transparent-Background.png',
-  name: 'BMW 328ci',
-  status: 'active',
-  total: 35000,
-  started: '2017-5-1',
-  perDay: 15,
-  saved: 12000,
-  percentSaved: 34,
-}
+  );
+};

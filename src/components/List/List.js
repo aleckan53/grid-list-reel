@@ -24,5 +24,5 @@ export default function List() {
         data.map((item, idx) => <Card key={idx} data={item}/>)
       )}
     </ul>
-  )
-}
+  );
+};

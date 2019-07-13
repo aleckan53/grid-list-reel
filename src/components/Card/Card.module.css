@@ -5,6 +5,7 @@
   border-radius: var(--border-radius);
   -webkit-box-shadow: var(--shadow) var(--black30);
           box-shadow: var(--shadow) var(--black30);
+  margin-bottom: 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 25% auto 25%;
