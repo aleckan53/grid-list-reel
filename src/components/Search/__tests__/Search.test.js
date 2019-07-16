@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import Search from './Search';
-import { useInput } from './hooks/useInput';
-import { testHook } from '../../testUtils/testHook';
+import Search from '../Search';
+import { useInput } from '../hooks/useInput';
+import { testHook } from '../../../testUtils/testHook';
 
 describe('Search component', () => {
 

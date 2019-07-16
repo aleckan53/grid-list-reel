@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Card from './Card';
+import Card from '../Card';
 
 describe('Card component', () => {
   it('matches the snapshot', () => {

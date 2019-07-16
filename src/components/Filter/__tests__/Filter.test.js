@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Filter from './Filter'
+import Filter from '../Filter'
 
 describe('Filter component', () => {
   it('matches the snapshot', () => {

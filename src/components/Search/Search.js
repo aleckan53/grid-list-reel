@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Search.module.css';
+import styles from './css/Search.module.css';
 import { useInput } from './hooks/useInput';
 
 export default function Search({ setSearchTerm }) {
@@ -13,5 +13,5 @@ export default function Search({ setSearchTerm }) {
         type='text' 
         className={styles.bar}/>
     </div>
-  )
-}
+  );
+};

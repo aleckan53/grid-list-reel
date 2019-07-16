@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import MockPromise from '../../testUtils/mockPromise';
-import { fetchData } from '../../service';
+import MockPromise from '../../../testUtils/mockPromise';
+import { fetchData } from '../../../service';
 
-import ListView from './ListView';
+import ListView from '../ListView';
 
-jest.mock('../../service', () => ({
+jest.mock('../../../service', () => ({
   fetchData: jest.fn()
 }));
 

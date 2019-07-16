@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './List.module.css';
+import styles from './css/List.module.css';
 
 import Card from '../Card/Card';
 
