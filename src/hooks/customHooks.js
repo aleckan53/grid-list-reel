@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const useInput = (text, cb, delay=600) => {
   const [value, setValue] = useState('');

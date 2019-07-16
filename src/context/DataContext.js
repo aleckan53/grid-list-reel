@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 const DataContext = React.createContext({
-  data: [],
-  setData: () => {},
+  store: [],
+  setStore: () => {},
 });
 
 export default DataContext;
 
 export function DataProvider({ children }) {
 
-  const [data, setData] = useState([]);
+  const [store, setStore] = useState([]);
 
   return (
     <DataContext.Provider value={{
-      data, setData
+      store, setStore
     }}>
       { children }
     </DataContext.Provider>

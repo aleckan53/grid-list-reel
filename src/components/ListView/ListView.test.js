@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import MockPromise from '../../mockPromise';
 import { fetchData } from '../../service';
 
-import List from './List';
+import ListView from './ListView';
 
 jest.mock('../../service', () => ({
   fetchData: jest.fn()
@@ -21,7 +21,7 @@ fetchData.mockImplementation(() => {
 describe('List component', () => {
 
   it('fetches and renders list of Cards', async () => {
-    const wrapper = mount(<List/>);
+    const wrapper = mount(<ListView/>);
     const data = [
       {name: 'test1'},
       {name: 'test2'}

@@ -7,6 +7,6 @@ function App() {
       <ListView/>
     </div>
   );
-};
+}
 
 export default App;
