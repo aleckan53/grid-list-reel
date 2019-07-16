@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import Search from '../Search/Search';
+import Sort from '../Sort/Sort';
 import Filter from '../Filter/Filter'
 import List from '../List/List';
 import DataContext from '../../context/DataContext';
@@ -18,6 +19,7 @@ const ListView = () => {
   return (
     <section>
       <Search setSearchTerm={setSearchTerm}/>
+      <Sort/>
       <Filter/>
       <List data={data} isLoading={isLoading}/>
     </section>
