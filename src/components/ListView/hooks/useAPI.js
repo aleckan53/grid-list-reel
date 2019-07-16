@@ -1,35 +1,37 @@
 import { useState, useEffect } from 'react';
 
-const useAPI = (fetchData, context, searchTerm) => {
+const defaultContextProps = {
+  store: [],
+  setStore: () => {},
+}
+
+const useAPI = (fetchData, context = defaultContextProps, setParentState) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
   const { store, setStore } = context;
 
   const effect = useEffect(() => {
-
     if(!store.length) {
       // if first render, do API request => populate context
       setIsLoading(true);
       fetchData()
         .then(res => {
-          setData(res);
+          setParentState(res);
           setStore(res);
         })
         .catch(console.error)
         .finally(() => setIsLoading(false))  
     } else {
-      // if store has data
-      const term = searchTerm.toLowerCase();
-      const filtered = store.filter(item => item.name.toLowerCase().includes(term));
-
-      setData(filtered);
+      // when rerender, if store already has data
+      setParentState(store);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchTerm]);
+  }, []);
 
   return {
-    effect, isLoading, data, setData
+    effect, isLoading
   };
 };
 
 export default useAPI;
+
+
