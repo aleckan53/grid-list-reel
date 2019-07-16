@@ -17,8 +17,8 @@ export default function ListView() {
   // handle search
   const [searchTerm, setSearchTerm] = useState('');
   useEffect(() => {
-    
-  }, [])
+    console.log(searchTerm)
+  }, [searchTerm])
 
   // setting local data
 

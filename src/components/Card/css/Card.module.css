@@ -8,10 +8,10 @@
   margin-bottom: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% auto 25%;
-      grid-template-columns: 25% auto 25%;
-  -ms-grid-rows: 80px 0% auto;
-      grid-template-rows: 80px 0% auto;
+  -ms-grid-columns: 25vw auto 25vw;
+      grid-template-columns: 25vw auto 25vw;
+  -ms-grid-rows: 80px 0 auto;
+      grid-template-rows: 80px 0 auto;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   padding: 1rem;
