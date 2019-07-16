@@ -12,11 +12,10 @@ describe('Search component', () => {
     ReactDOM.render(<Search/>, root);
     expect(root).toMatchSnapshot();
     ReactDOM.unmountComponentAtNode(root);
-  })
-})
+  });
+});
 
 describe('useInput hook', () => {
-
   let input;
 
   beforeEach(() => {

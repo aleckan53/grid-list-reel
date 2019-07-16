@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
 export const useInput = (name, cb, delay=600) => {
+  const [value, setValue] = useState('');
   const [timer, setTimer] = useState(null);
 
   const onChange = e => {
     clearTimeout(timer);
     const term = e.target.value;
-
+    setValue(e.target.value);
     if(cb) {
       setTimer(setTimeout(() => {
         cb(term);
@@ -15,6 +16,6 @@ export const useInput = (name, cb, delay=600) => {
   };
 
   return {
-    name, onChange, placeholder: name,
+    name, value, onChange, placeholder: name,
   };
 };
