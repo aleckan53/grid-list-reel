@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Search from '../Search/Search';
+import Sort from '../Sort/Sort';
 import Filter from '../Filter/Filter'
 import List from '../List/List';
 import DataContext from '../../context/DataContext';
@@ -14,6 +15,9 @@ const ListView = () => {
   // handles searching
   const { searchTerm, setSearchTerm, getResult } = useSearchTerm();
 
+  // handles sorting
+
+
   // initialize local data state
   const { data, setData } = useLocalData([searchTerm], getResult);
 
@@ -24,6 +28,7 @@ const ListView = () => {
   return (
     <section>
       <Search setSearchTerm={setSearchTerm}/>
+      <Sort/>
       <Filter/>
       <List data={data} isLoading={isLoading}/>
     </section>
