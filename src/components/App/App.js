@@ -1,14 +1,12 @@
 import React from 'react';
-import List from '../List/List';
-import Search from '../Search/Search';
+import ListView from '../ListView/ListView';
 
 function App() {
   return (
     <div className="App">
-      <Search/>
-      <List/>
+      <ListView/>
     </div>
   );
-}
+};
 
 export default App;

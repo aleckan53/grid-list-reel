@@ -9,7 +9,7 @@ export default function List() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const side = useEffect(() => {
+  useEffect(() => {
     fetchData()
       .then(setData)
       .finally(() => setIsLoading(false))
