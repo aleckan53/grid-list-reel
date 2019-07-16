@@ -7,7 +7,7 @@ const DataContext = React.createContext({
 
 export default DataContext;
 
-export function DataProvider({ children }) {
+export const DataProvider = ({ children }) => {
 
   const [store, setStore] = useState([]);
 

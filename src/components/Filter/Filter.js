@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './css/Filter.module.css';
 
-export default function Filter() {
-
+const Filter = () => {
   return (
     <div className={styles.filter}>
     </div>
-  )
-}
+  );
+};
+
+export default Filter;

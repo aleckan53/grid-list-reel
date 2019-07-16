@@ -7,7 +7,7 @@ import { fetchData } from '../../service';
 
 import useAPI from './hooks/useAPI';
 
-export default function ListView() {
+const ListView = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const context = useContext(DataContext);
 
@@ -23,3 +23,5 @@ export default function ListView() {
     </section>
   );
 };
+
+export default ListView;

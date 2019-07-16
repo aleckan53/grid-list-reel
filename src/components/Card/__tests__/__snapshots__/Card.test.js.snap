@@ -3,7 +3,7 @@
 exports[`Card component matches the snapshot 1`] = `
 <div>
   <li
-    class="card "
+    class="card false"
   >
     <div
       class="img"
@@ -31,7 +31,7 @@ exports[`Card component matches the snapshot 1`] = `
       34
     </div>
     <div
-      class="details "
+      class="details false"
     >
       <p>
         <span>

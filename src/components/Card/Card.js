@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './css/Card.module.css';
 
-export default function Card({data}) {
+const Card = ({data}) => {
 
   const [viewDeatils, setViewDetials] = useState(false);
 
@@ -10,7 +10,7 @@ export default function Card({data}) {
   };
 
   return (
-    <li className={`${styles.card } ${!viewDeatils? '' : styles.expand}`}>
+    <li className={`${styles.card } ${viewDeatils && styles.expand}`}>
       <div className={ styles.img } style={ bgImage }/>
       <div className={ styles.info }>
         <h3>{ data.name }</h3>
@@ -21,7 +21,7 @@ export default function Card({data}) {
         { data.percentSaved }
       </div>
       <div 
-        className={`${styles.details } ${!viewDeatils? '' : styles.expand}`}>
+        className={`${styles.details } ${viewDeatils && styles.expand}`}>
         <p><span>Days left:</span><span>{ 12 }</span></p>  
         <p><span>$ per day:</span><span>${ data.perDay }</span></p>    
         <p><span>Start date:</span><span>{ data.started }</span></p>    
@@ -37,3 +37,5 @@ export default function Card({data}) {
     </li>
   );
 };
+
+export default Card;

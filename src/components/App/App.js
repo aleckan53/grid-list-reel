@@ -1,7 +1,7 @@
 import React from 'react';
 import ListView from '../ListView/ListView';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <ListView/>
