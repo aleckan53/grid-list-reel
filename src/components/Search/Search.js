@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Search.module.css';
-import { useInput } from '../../hooks/customHooks';
+import { useInput } from './hooks/useInput';
 
-export default function Search({setTerm}) {
+export default function Search({ setSearchTerm }) {
 
-  const handleInput = useInput('Search', console.log);
+  const handleInput = useInput('Search', setSearchTerm);
 
   return (
     <div className={styles.search}>

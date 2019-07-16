@@ -1,10 +1,11 @@
 export const fetchData = () => {
+  console.log('mocking API request');
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(data)
-    })
-  })
-}
+      resolve(data);
+    });
+  });
+};
 
 const data = [
   {
@@ -87,4 +88,4 @@ const data = [
     saved: 350,
     percentSaved: 100,
   },
-]
+];

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import MockPromise from '../../mockPromise';
+import MockPromise from '../../testUtils/mockPromise';
 import { fetchData } from '../../service';
 
 import ListView from './ListView';
@@ -33,5 +33,5 @@ describe('List component', () => {
 
     let list = wrapper.find('[data-test-id="list"]');
     expect(list.children()).toHaveLength(2);
-  })
-})
+  });
+});
