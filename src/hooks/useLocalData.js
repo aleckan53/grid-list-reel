@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import DataContext from '../../../context/DataContext';
+import DataContext from '../context/DataContext';
 
 const useLocalData = (deps=[], cb=()=>{}) => {
 

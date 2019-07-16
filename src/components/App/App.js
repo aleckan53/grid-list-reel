@@ -1,5 +1,5 @@
 import React from 'react';
-import ListView from '../ListView/ListView';
+import { ListView } from 'components';
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useInput = (name, cb, delay=600) => {
+const useInput = (name, cb, delay=600) => {
   const [value, setValue] = useState('');
   const [timer, setTimer] = useState(null);
 
@@ -19,3 +19,5 @@ export const useInput = (name, cb, delay=600) => {
     name, value, onChange, placeholder: name,
   };
 };
+
+export default useInput;

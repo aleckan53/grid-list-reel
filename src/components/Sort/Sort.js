@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import useToggle from './hooks/useToggle';
-import useSortType from './hooks/useSortType';
+import { useToggle, useSortType } from 'hooks';
 
 const Sort = () => {
   const handleToggle = useToggle();

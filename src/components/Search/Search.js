@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './css/Search.module.css';
-import { useInput } from './hooks/useInput';
+import { useInput } from 'hooks';
 
 const Search = ({ setSearchTerm }) => {
   // updates search term
