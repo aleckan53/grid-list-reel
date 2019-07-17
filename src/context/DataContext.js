@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 const DataContext = React.createContext({
   store: [],
   sortType: '',
-  order: '',
+  orderDSC: '',
   setStore: () => {},
   setSortType: () => {},
-  setOrder: () => {},
+  setOrderDSC: () => {},
 });
 
 export default DataContext;
@@ -15,11 +15,11 @@ export const DataProvider = ({ children }) => {
 
   const [store, setStore] = useState([]);
   const [sortType, setSortType] = useState('');
-  const [order, setOrder] = useState('DESC');
+  const [orderDSC, setOrderDSC] = useState(true);
 
   return (
     <DataContext.Provider value={{
-      store, setStore, sortType, setSortType, order, setOrder
+      store, setStore, sortType, setSortType, orderDSC, setOrderDSC
     }}>
       { children }
     </DataContext.Provider>

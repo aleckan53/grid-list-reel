@@ -4,6 +4,8 @@ exports[`Filter component matches the snapshot 1`] = `
 <div>
   <div
     class="filter"
-  />
+  >
+    Filter
+  </div>
 </div>
 `;

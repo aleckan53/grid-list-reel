@@ -4,7 +4,6 @@ const useToggle = () => {
   const [toggle, setToggle] = useState(false);
 
   const onClick = () => {
-    console.log(toggle)
     setToggle(!toggle);
   };
 

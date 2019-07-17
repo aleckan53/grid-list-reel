@@ -9,8 +9,11 @@ const ListView = () => {
   // handles searching
   const { searchTerm, setSearchTerm, getResult } = useSearchTerm();
 
-  // initialize local data state
-  const { data, setData } = useLocalData([searchTerm, context.sortType], getResult);
+  // initializes local data state
+  // manipulates state trough dependancies array
+  const { data, setData } = useLocalData(
+    [searchTerm, context.sortType, context.orderDSC], getResult
+  );
 
   // handles data loading (API request || context)
   // updates local state (data)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import MockPromise from '../../../testUtils/mockPromise';
-import { fetchData } from '../../../service';
+import MockPromise from 'testUtils/mockPromise';
+import { fetchData } from 'service';
 
 import ListView from '../ListView';
 

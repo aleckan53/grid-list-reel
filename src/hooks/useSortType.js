@@ -1,76 +1,35 @@
 import { useContext } from 'react';
 import DataContext from 'context/DataContext';
+import sortBy from 'utils/sortBy';
 
 const useSortType = () => {
-  const { store, setStore, setSortType } = useContext(DataContext);
+  const { 
+    store, setStore, sortType, setSortType, orderDSC, setOrderDSC
+  } = useContext(DataContext);
 
-  const onClick = e => {
+  const sort = e => {
     e.stopPropagation();
     const selectedSort = e.target.name;
-    const sorted = store.sort(sortBy[selectedSort]);
-  
-    // setting sortType globally
+    let order = orderDSC;
+
+    // if the same sortType selected 2nd time, change order
+    setOrderDSC(!orderDSC);
     setSortType(selectedSort);
+
+    // resets order to descending if sortType switched
+    if (selectedSort !== sortType && sortType.length) {
+      order = true;
+    }
+
+    const sorted = store.sort((a, b) => sortBy[selectedSort](a, b, order));
 
     // updating store
     setStore(sorted);
   };
 
   return {
-    onClick
+    sort,
   };
 };
 
 export default useSortType;
-
-const sortBy = {
-  name(a, b) {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-
-    return (
-      nameA < nameB ? -1 :
-      nameA > nameB ? 1 :
-      0
-    );
-  },
-  price(a, b) {
-    const priceA = a.total;
-    const priceB = b.total;
-
-    return (
-      priceA < priceB ? -1 :
-      priceA > priceB ? 1 :
-      0
-    );
-  },
-  progress(a, b) {
-    const progA = a.percentSaved;
-    const progB = b.percentSaved;
-
-    return (
-      progA < progB ? -1 :
-      progA > progB ? 1 :
-      0
-    );
-  },
-  perDay(a, b) {
-    const progA = a.perDay;
-    const progB = b.perDay;
-
-    return (
-      progA < progB ? -1 :
-      progA > progB ? 1 :
-      0
-    );
-  },
-};
-
-const orderBy = {
-  dsc() {
-
-  },
-  asc() {
-
-  },
-};
