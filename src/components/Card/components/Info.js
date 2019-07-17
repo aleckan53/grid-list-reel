@@ -1,5 +1,7 @@
 import React from 'react';
 
+import kFormatter from 'utils/kFormatter';
+
 const Info = ({ data, className }) => {
 
   const { name, total, saved, status } = data;
@@ -7,7 +9,7 @@ const Info = ({ data, className }) => {
   return (
     <div className={className}>
       <h3>{name}</h3>
-      <p>${saved} of ${total}</p>
+      <p>${kFormatter(saved)} of ${kFormatter(total)}</p>
       <p>{status}</p>
     </div>
   );
