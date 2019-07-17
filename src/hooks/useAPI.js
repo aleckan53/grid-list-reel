@@ -11,7 +11,7 @@ const useAPI = (fetchData, context = defaultContextProps, setParentState) => {
 
   const effect = useEffect(() => {
     if(!store.length) {
-      // if first render, do API request => populate context
+      // first view load, do API request => populate context
       setIsLoading(true);
       fetchData()
         .then(res => {
@@ -21,7 +21,7 @@ const useAPI = (fetchData, context = defaultContextProps, setParentState) => {
         .catch(console.error)
         .finally(() => setIsLoading(false))  
     } else {
-      // when rerender, if store already has data
+      // second load, if store already has data
       setParentState(store);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps

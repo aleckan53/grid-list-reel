@@ -6,7 +6,8 @@ const Sort = () => {
   const handleToggle = useToggle();
   const toggled = handleToggle["data-toggle"];
   
-  const { sortType, onClick } = useSortType();
+  const { onClick } = useSortType();
+
 
   return (
     <div>
