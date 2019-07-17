@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import DataContext from 'context/DataContext';
 import { fetchData } from 'service';
-import { Search, Sort, Filter, List } from 'components';
+import { Search, Sort, List } from 'components';
 import { useAPI, useLocalData, useSearchTerm } from 'hooks';
 
 const ListView = () => {
@@ -23,7 +23,6 @@ const ListView = () => {
     <section>
       <Search setSearchTerm={setSearchTerm}/>
       <Sort/>
-      <Filter/>
       <List data={data} isLoading={isLoading}/>
     </section>
   );
