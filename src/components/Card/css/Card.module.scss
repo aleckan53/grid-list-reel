@@ -4,6 +4,9 @@ $border: var(--border);
 $border-radius: var(--border-radius);
 $shadow: var(--shadow);
 $padding: 1rem;
+$blue: var(--blue);
+$orange: var(--orange);
+$green: var(--green);
 
 .card {
   list-style: none;
@@ -31,7 +34,7 @@ $padding: 1rem;
     grid-area: img;
     border: $border $black30;
     border-radius: 10px;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
@@ -45,15 +48,55 @@ $padding: 1rem;
     font-size: .8rem;
 
     h3 {
-      font-size: 5vw;
+      font-size: 4vw;
     }
   }
 
   .progress {
     grid-area: progress;
-    display: grid;
-    place-content: center;
-    font-size: 2rem;
+    position: relative;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      [data-circle='top'] {
+        stroke-dasharray: 283 283;
+        stroke-dashoffset: 283;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        stroke-linecap: round;
+      }
+
+      [data-circle='bottom'] {
+        stroke: $black30;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      &::after {
+        content: '%';
+        font-size: .8rem
+      }
+    }
+    
+
+    // font-size: 1.2rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    // &::after {
+    //   content: '%';
+    //   display: inline;
+    //   font-size: .5rem;
+    //   margin-left: .5rem;
+    // }
   }
 
   .details {
@@ -93,7 +136,7 @@ $padding: 1rem;
         }
 
         span {
-          width: 40%;
+          width: 60%;
           text-align: center;
         }
       }
@@ -148,5 +191,15 @@ $padding: 1rem;
       left: 0;
       top: -1rem;
     }
+  }
+
+  [data-status='paused'] {
+    color: $orange;
+    stroke: $orange;
+  }
+
+  [data-status='active'] {
+    color: $green;
+    stroke: $green;
   }
 }

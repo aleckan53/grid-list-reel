@@ -4,6 +4,7 @@ import useLocalData from './useLocalData';
 import useSearchTerm from './useSearchTerm';
 import useSortType from './useSortType';
 import useToggle from './useToggle';
+import useProgress from './useProgress';
 
 export {
   useAPI,
@@ -12,4 +13,5 @@ export {
   useSearchTerm,
   useSortType,
   useToggle,
+  useProgress,
 }

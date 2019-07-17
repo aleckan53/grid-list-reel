@@ -3,6 +3,13 @@
   --black30: #00000030;
   --black50: #00000050;
   --black70: #00000070;
+  --yellow: #f9ed69;
+  --orange: #f08a5d;
+  --red: #b83b5e;
+  --purple: #6a2c70;
+  --blue: #3074ac;
+  --green: #39a03e;
+
   --border: 1px solid;
   --shadow: 0px 5px 10px -1px;
   --border-radius: 15px;

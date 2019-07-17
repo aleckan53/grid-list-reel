@@ -24,7 +24,7 @@ const Card = ({ data }) => {
     <li className={`${styles.card } ${viewMore && styles.expand}`}>
       <Image className={styles.img} img={data.img}/>
       <Info className={styles.info} data={data}/>
-      <Progress className={styles.progress} percent={data.percentSaved}/>
+      <Progress className={styles.progress} percent={data.percentSaved} status={data.status}/>
       <Details data={data} classes={{
         container: `${styles.details } ${viewMore && styles.expand}`,
         controls : styles.controls

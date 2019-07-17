@@ -10,7 +10,7 @@ const Info = ({ data, className }) => {
     <div className={className}>
       <h3>{name}</h3>
       <p>${kFormatter(saved)} of ${kFormatter(total)}</p>
-      <p>{status}</p>
+      <p data-status={status}>{status}</p>
     </div>
   );
 };

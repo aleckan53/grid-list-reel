@@ -15,7 +15,6 @@ const Details = ({ data, classes }) => {
   const handleInput = useInput();
 
   const { container, controls } = classes;
-
   const { updateItem } = useContext(DataContext);
 
   return (
@@ -28,7 +27,8 @@ const Details = ({ data, classes }) => {
         {toggled 
           ? <Range perDay={data.perDay} id={data.id} handleInput={handleInput} onClick={onClick}/> 
           : <button onClick={onClick}><Options/><span>Save faster</span></button> } 
-        <button onClick={() => updateItem(data.id, 'status', data.status === 'active' ? 'paused' : 'active')}>
+        <button 
+          onClick={() => updateItem(data.id, 'status', data.status === 'active' ? 'paused' : 'active')}>
           {data.status !== 'active'
             ? <><Start/><span>Restart</span> </>
             : <><Pause/><span>Pause</span></>
