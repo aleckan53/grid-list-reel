@@ -108,6 +108,24 @@
   border: var(--border) var(--black30);
   background: transparent;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .details .controls button svg {
+  font-size: 1.1rem;
+}
+
+.card .details .controls button span {
+  width: 40%;
+  text-align: center;
 }
 
 .card .details .controls [data-name='range'] {
@@ -129,8 +147,8 @@
 }
 
 .card .details .controls [data-name='range'] button svg {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .card .details .controls [data-name='range'] button:nth-of-type(1) {

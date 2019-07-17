@@ -19,6 +19,7 @@ const useSortType = () => {
     // resets order to descending if sortType switched
     if (selectedSort !== sortType && sortType.length) {
       order = true;
+      setOrderDSC(false);
     }
 
     const sorted = store.sort((a, b) => sortBy[selectedSort](a, b, order));
