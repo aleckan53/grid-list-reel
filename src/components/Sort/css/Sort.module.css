@@ -18,8 +18,7 @@
 }
 
 .sort button:not(.toggle) {
-  margin-right: 1rem;
-  width: 20%;
+  min-width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,6 +38,10 @@
      -moz-appearance: none;
           appearance: none;
   border: var(--border) var(--black30);
+}
+
+.sort button svg {
+  color: var(--blue);
 }
 
 .sort .toggle {

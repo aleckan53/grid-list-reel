@@ -2,6 +2,7 @@ $padding: var(--padding);
 $black30: var(--black30);
 $black50: var(--black50);
 $border: var(--border);
+$blue: var(--blue);
 
 .sort {
   width: 100%;
@@ -13,8 +14,7 @@ $border: var(--border);
   margin-bottom: $padding;
 
   button:not(.toggle) {
-    margin-right: 1rem;
-    width: 20%;
+    min-width: 20%;
     display: flex;
     padding: 5px 10px;
     border-radius: 10px;
@@ -26,6 +26,10 @@ $border: var(--border);
     background: none;
     appearance: none;
     border: $border $black30;
+
+    svg {
+      color: $blue;
+    }
   }
 
   .toggle {
