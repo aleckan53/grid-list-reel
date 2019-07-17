@@ -9,6 +9,7 @@ export const fetchData = () => {
 
 const data = [
   {
+    id: 1,
     img: 'http://www.pngmart.com/files/3/BMW-M3-Transparent-Background.png',
     name: 'BMW 328ci',
     status: 'active',
@@ -19,6 +20,7 @@ const data = [
     percentSaved: 34,
   },
   {
+    id: 2,
     img: 'https://www.stickpng.com/assets/images/585fd18fcb11b227491c35d3.png',
     name: 'Iphone',
     status: 'paused',
@@ -29,6 +31,7 @@ const data = [
     percentSaved: 6.6,
   },
   {
+    id: 3,
     img: 'https://www.pngarts.com/files/3/Electric-Scooter-PNG-Background-Image.png',
     name: 'Scooter',
     status: 'active',
@@ -39,6 +42,7 @@ const data = [
     percentSaved: 8.6,
   },
   {
+    id: 4,
     img: 'https://png.pngtree.com/element_origin_min_pic/16/08/14/1457b0160a7b1b7.jpg',
     name: 'Gucci bag',
     status: 'active',
@@ -49,6 +53,7 @@ const data = [
     percentSaved: 12.5,
   },
   {
+    id: 5,
     img: 'https://png.pngtree.com/element_our/sm/20180511/sm_e7f94f16b5c1dee1cde84f83273b3a36.png',
     name: 'Motorcycle',
     status: 'paused',
@@ -59,6 +64,7 @@ const data = [
     percentSaved: 33.3,
   },
   {
+    id: 6,
     img: 'https://media.cntraveler.com/photos/581a03426928748a1e19f066/master/w_420,c_limit/copenhagen-denmark-GettyImages-466666680.jpg',
     name: 'Trip to Europe',
     status: 'active',
@@ -69,6 +75,7 @@ const data = [
     percentSaved: 6.7,
   },
   {
+    id: 7,
     img: 'http://pngimg.com/uploads/laptop/laptop_PNG5941.png',
     name: 'Laptop',
     status: 'acive',
@@ -79,6 +86,7 @@ const data = [
     percentSaved: 87.5,
   },
   {
+    id: 8,
     img: 'http://pngimg.com/uploads/headphones/headphones_PNG7640.png',
     name: 'Headphones',
     status: 'completed',

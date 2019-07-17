@@ -13,7 +13,10 @@ const Card = ({ data }) => {
       <Image className={styles.img} img={data.img}/>
       <Info className={styles.info} data={data}/>
       <Progress className={styles.progress} percent={data.percentSaved}/>
-      <Details className={`${styles.details } ${viewMore && styles.expand}`} data={data}/>
+      <Details data={data} classes={{
+        container: `${styles.details } ${viewMore && styles.expand}`,
+        controls : styles.controls
+      }}/>
       <button 
         onClick={toggleDropDown}
         className={ styles.toggle }>
