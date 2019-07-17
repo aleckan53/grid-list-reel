@@ -4,15 +4,12 @@ $black50: var(--black50);
 $padding: 1rem;
 $shadow: var(--shadow);
 
-.search {
-
-  .bar {
-    height: 35px;
-    width: 100%;
-    border: $border $black30;
-    border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 1.2rem;
-    margin-bottom: $padding;
-  }
+.bar {
+  height: 35px;
+  width: 100%;
+  border: $border $black30;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  margin-bottom: $padding;
 }

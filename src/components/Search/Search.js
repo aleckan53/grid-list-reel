@@ -8,12 +8,10 @@ const Search = ({ setSearchTerm }) => {
   const handleInput = useInput('Search', setSearchTerm);
 
   return (
-    <div className={styles.search}>
-      <input 
-        { ...handleInput }
-        type='text' 
-        className={styles.bar}/>
-    </div>
+    <input 
+      { ...handleInput }
+      type='text' 
+      className={styles.bar}/>
   );
 };
 
