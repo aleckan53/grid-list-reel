@@ -2,16 +2,12 @@
 
 exports[`Search component matches the snapshot 1`] = `
 <div>
-  <div
-    class="search"
-  >
-    <input
-      class="bar"
-      name="Search"
-      placeholder="Search"
-      type="text"
-      value=""
-    />
-  </div>
+  <input
+    class="bar"
+    name="Search"
+    placeholder="Search"
+    type="text"
+    value=""
+  />
 </div>
 `;

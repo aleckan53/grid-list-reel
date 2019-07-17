@@ -9,7 +9,7 @@ const useSortType = () => {
 
   const sort = e => {
     e.stopPropagation();
-    const selectedSort = e.target.name;
+    const selectedSort = e.target.dataset.type;
     let order = orderDSC;
 
     // if the same sortType selected 2nd time, change order
@@ -28,7 +28,7 @@ const useSortType = () => {
   };
 
   return {
-    sort,
+    sort, orderDSC, sortType
   };
 };
 
