@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import DataContext from 'context/DataContext';
 
 const useSortType = () => {
-  const { store, setStore, sortType, setSortType } = useContext(DataContext);
+  const { store, setStore, setSortType } = useContext(DataContext);
 
   const onClick = e => {
     e.stopPropagation();
@@ -32,17 +32,38 @@ const sortBy = {
       nameA < nameB ? -1 :
       nameA > nameB ? 1 :
       0
-    )
+    );
   },
-  price() {
+  price(a, b) {
+    const priceA = a.total;
+    const priceB = b.total;
 
+    return (
+      priceA < priceB ? -1 :
+      priceA > priceB ? 1 :
+      0
+    );
   },
-  progress() {
+  progress(a, b) {
+    const progA = a.percentSaved;
+    const progB = b.percentSaved;
 
+    return (
+      progA < progB ? -1 :
+      progA > progB ? 1 :
+      0
+    );
   },
-  perDay() {
+  perDay(a, b) {
+    const progA = a.perDay;
+    const progB = b.perDay;
 
-  }
+    return (
+      progA < progB ? -1 :
+      progA > progB ? 1 :
+      0
+    );
+  },
 };
 
 const orderBy = {
