@@ -12,7 +12,7 @@ const Sort = () => {
 
   return (
     <div className={styles.sort}>
-      <button className={styles.toggle}{...handleToggle}>{toggled ? <Close/> : <Bars/>}</button>
+      <button className={styles.toggle} {...handleToggle}>{toggled ? <Close/> : <Bars/>}</button>
       {toggled && <>
         <button data-type='perDay' onClick={sort}>$ per day</button>
         <button data-type='progress' onClick={sort}>Progress</button>
