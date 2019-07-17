@@ -11,15 +11,9 @@ const Range = ({ perDay, id, onClick, handleInput }) => {
   const min = Math.floor(perDay / 2);
 
   const handleConfirm = () => {
-    console.log(handleInput.value);
     onClick();
 
-    // find in store
-    console.log(id)
-
-    const currentItem = context.store.find(item => item.id === id);
-
-    context.setStore([...context.store, {currentItem, perDay: handleInput.value}])
+    context.updateItem(id, 'perDay', handleInput.value);
 
     // change value
   }
@@ -32,7 +26,7 @@ const Range = ({ perDay, id, onClick, handleInput }) => {
         min={min} 
         max={max} 
         onInput={onChange}/>
-      <button onClick={onClick}><Confirm/></button>
+      <button onClick={handleConfirm}><Confirm/></button>
       <button onClick={onClick}><Cancel/></button>
     </div>
   );

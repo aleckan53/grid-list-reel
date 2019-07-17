@@ -12,7 +12,7 @@ const ListView = () => {
   // initializes local data state
   // manipulates state trough dependancies array
   const { data, setData } = useLocalData(
-    [searchTerm, context.sortType, context.orderDSC], getResult
+    [searchTerm, context.sortType, context.orderDSC, context.store], getResult
   );
 
   // handles data loading (API request || context)
