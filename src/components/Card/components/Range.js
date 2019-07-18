@@ -12,11 +12,8 @@ const Range = ({ perDay, id, onClick, handleInput }) => {
 
   const handleConfirm = () => {
     onClick();
-
     context.updateItem(id, 'perDay', handleInput.value);
-
-    // change value
-  }
+  };
  
   return (
     <div data-name='range'>

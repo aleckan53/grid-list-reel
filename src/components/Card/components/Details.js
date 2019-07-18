@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useToggle, useInput } from 'hooks';
 import Range from './Range';
 
@@ -15,12 +15,19 @@ const Details = ({ data, classes }) => {
   const handleInput = useInput();
 
   const { container, controls } = classes;
-  const { updateItem } = useContext(DataContext);
+  const { updateItem, sortType, orderDSC } = useContext(DataContext);
+
+  // collapses range if sortType or order changes 
+  useEffect(() => {
+    if(toggled) {
+      onClick()
+    }
+  }, [sortType, orderDSC])
 
   return (
     <div className={container}>
       <p><span>Days left:</span><span>{ 12 }</span></p>  
-      <p><span>$ per day:</span><span>${ handleInput.value || data.perDay }</span></p>    
+      <p><span>$ per day:</span><span>${ data.perDay }</span></p>    
       <p><span>Start date:</span><span>{ data.started }</span></p>    
       <p><span>Estimated finsh date:</span><span>{ data.started }</span></p>  
       <div className={controls}>
