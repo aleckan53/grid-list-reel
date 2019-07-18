@@ -17,6 +17,7 @@ describe('Card component', () => {
     };
     const root = document.createElement('div');
     ReactDOM.render(<Card data={data}/>, root);
+
     expect(root).toMatchSnapshot();
     ReactDOM.unmountComponentAtNode(root);
   });

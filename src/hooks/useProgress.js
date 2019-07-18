@@ -4,7 +4,7 @@ const useProgress = (percent) => {
   const [offset, setOffset] = useState(null);
   
   useEffect(() => {
-    const circle = document.querySelector(`#circle`)
+    const circle = document.querySelector(`#circle`) || {r: {baseVal: {value: 100}}}
     const radius = circle.r.baseVal.value;
     const circumference = radius * 2 * Math.PI;
 
@@ -15,7 +15,7 @@ const useProgress = (percent) => {
 
   return {
     style: {
-      strokeDashoffset: offset,
+      strokeDashoffset: offset || 0,
     }
   }
 };

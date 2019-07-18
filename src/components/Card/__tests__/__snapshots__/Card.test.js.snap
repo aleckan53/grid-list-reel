@@ -53,6 +53,7 @@ exports[`Card component matches the snapshot 1`] = `
           id="circle"
           r="45"
           stroke-width="7"
+          style="stroke-dashoffset: 0;"
         />
       </svg>
     </div>
