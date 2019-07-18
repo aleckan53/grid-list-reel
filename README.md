@@ -10,15 +10,15 @@
 #### Data flow
 <img src='./readme/data.jpeg'/>
 
-#####<span style='background: rgba(0,100,0,.4)'>First render</span>
+#####<span style='background: rgba(0,100,0,.4)'><strong>First render</strong></span>
 1. List view fetches data from mock API server
 2. API reponse updates ListView local and global (context) data stores
 3. <span style='background: rgba(200,100,0,.4)'>Finnaly</span> ListView maps it's local state and renders Cards
 
-#####<span style='background: rgba(100,0,200,.4)'>Search handling</span>
+#####<span style='background: rgba(100,0,200,.4)'><strong>Search handling</strong></span>
 `useSearch` hook observes `onChange` event of `Search` (user typing). Once typing is done, filters global store based on typed search term and updates `ListView` local data store with .6s delay (resets on every key press, delay value passed by argument to `useInput` in `Search`)
  
-#####<span style='background: rgba(0,100,255,.4)'>Sort handling</span>
+<span style='background: rgba(0,100,255,.4)'><strong>Sort handling</strong></span>
 `useSort` hook observes changes of `sortType` in global store (context). In `Sort`, `SortButton` `onClick` event changes global `sortType` value, which triggers resort of `ListView` local store. Default sort value = `undefined`. Double click on the same `sortType` changes order descending (`orderDSC=true`) => ascending(`orderDSC=false`)
 
 #### Folders structure
@@ -81,7 +81,7 @@ and `@media` breakpoints changing bodyPadding css variable
 
 ### TODOs if I had more time
 
-More tests
-CSS animations
-Decompose Card.module.scss
-Add Filter to filter list items
+More tests<br/>
+CSS animations<br/>
+Decompose Card.module.scss<br/>
+Add Filter to filter list items<br/>
