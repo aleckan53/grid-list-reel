@@ -1,24 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import styles from './css/Card.module.css';
 import { Image, Info, Progress, Details } from './components';
 
 import { useToggle } from 'hooks';
-import DataContext from 'context/DataContext';
 
 const Card = ({ data }) => {
 
   const { toggled: viewMore, onClick: toggleDropDown } = useToggle();
-
-
-  // collapses drop down if list resorted or reorderd
-  const { sortType, orderDSC } = useContext(DataContext);
-  
-  useEffect(() => {
-    if (viewMore) {
-      toggleDropDown();
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sortType, orderDSC])
 
   return (
     <li className={`${styles.card } ${viewMore && styles.expand}`}>

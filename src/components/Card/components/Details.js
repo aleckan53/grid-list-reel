@@ -15,14 +15,7 @@ const Details = ({ data, classes }) => {
   const handleInput = useInput();
 
   const { container, controls } = classes;
-  const { updateItem, sortType, orderDSC } = useContext(DataContext);
-
-  // collapses range if sortType or order changes 
-  useEffect(() => {
-    if(toggled) {
-      onClick()
-    }
-  }, [sortType, orderDSC])
+  const { updateItem } = useContext(DataContext);
 
   return (
     <div className={container}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './css/Sort.module.css';
 import { useToggle } from 'hooks';
+import SortBtn from './components/SortBtn';
 import { 
   IoMdFunnel as Bars,
   IoMdClose as Close,
@@ -19,16 +20,17 @@ const Sort = ({ sortType, setSortType, orderDSC, setOrderDSC }) => {
     }
   };
   
-  const { toggled, onClick } = useToggle();
+  const { toggled, onClick } = useToggle(false);
+  const btnProps = { orderDSC, sortType, onClick: handleClick };
 
   return (
     <div className={styles.sort}>
       <button className={styles.toggle} onClick={onClick}>{toggled ? <Close/> : <Bars/>}</button>
       {toggled && <>
-        <button data-type='perDay' onClick={handleClick}>$ a day</button>
-        <button data-type='progress' onClick={handleClick}>Progress</button>
-        <button data-type='price' onClick={handleClick}>Price</button>
-        <button data-type='name' onClick={handleClick}>Name</button>
+        <SortBtn name='perDay' {...btnProps}/>
+        <SortBtn name='price' {...btnProps}/>
+        <SortBtn name='progress' {...btnProps}/>
+        <SortBtn name='name' {...btnProps}/>
       </>}
     </div>
   );

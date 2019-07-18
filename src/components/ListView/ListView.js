@@ -1,11 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react';
 import DataContext from 'context/DataContext';
 import { Search, Sort, List } from 'components';
-import { useAPI, useSearchTerm } from 'hooks';
+import { useAPI } from 'hooks';
 import sortBy from 'utils/sortBy';
 
 const ListView = () => {
-  const { store, setOrderDSC, setSortType, sortType, orderDSC, searchTerm, setSearchTerm } = useContext(DataContext);
+  const { 
+    store, 
+    setOrderDSC, 
+    setSortType, 
+    sortType, 
+    orderDSC, 
+    searchTerm, 
+    setSearchTerm 
+  } = useContext(DataContext);
+
   const [data, setData] = useState([]);
 
   // loads data from API and updates local/global data
