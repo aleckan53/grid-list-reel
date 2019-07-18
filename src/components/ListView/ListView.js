@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import DataContext from 'context/DataContext';
 import { Search, Sort, List } from 'components';
-import { useAPI, useSearchTerm } from 'hooks';
+import { useAPI, useSearchTerm, useSort } from 'hooks';
+import sortBy from 'utils/sortBy';
 
 const ListView = () => {
   const { store } = useContext(DataContext);
@@ -15,14 +16,24 @@ const ListView = () => {
 
   useEffect(() => {
     const term = searchTerm.toLowerCase();
-    const filterd = store.filter(item => item.name.toLowerCase().includes(term))
+    const filterd = store.filter(item => item.name.toLowerCase().includes(term));
     setData(filterd);
-  }, [searchTerm])
+  }, [searchTerm]);
+
+  // handles sort
+  const { sortType, setSortType } = useSort();
+
+  useEffect(() => {
+    const items = [...data];
+    items.sort(sortBy[sortType]);
+
+    setData(items);
+  }, [sortType]);
 
   return (
     <section>
       <Search setSearchTerm={setSearchTerm}/>
-      <Sort/>
+      <Sort setSortType={setSortType}/>
       <List data={data} isLoading={isLoading}/>
     </section>
   );
