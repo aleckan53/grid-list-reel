@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## REEL task - Grid List
 
-## Available Scripts
+<a href='https://grid-list.olegakan5326.now.sh'>LIVE DEMO</a>
 
-In the project directory, you can run:
+### Structure
 
-### `npm start`
+#### Components stucture
+<img src='./readme/tree.jpeg'/>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Data flow
+<img src='./readme/data.jpeg'/>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#####<span style='background: rgba(0,100,0,.4)'>First render</span>
+1. List view fetches data from mock API server
+2. API reponse updates ListView local and global (context) data stores
+3. <span style='background: rgba(200,100,0,.4)'>Finnaly</span> ListView maps it's local state and renders Cards
 
-### `npm test`
+#####<span style='background: rgba(100,0,200,.4)'>Search handling</span>
+`useSearch` hook observes `onChange` event of `Search` (user typing). Once typing is done, filters global store based on typed search term and updates `ListView` local data store with .6s delay (resets on every key press, delay value passed by argument to `useInput` in `Search`)
+ 
+#####<span style='background: rgba(0,100,255,.4)'>Sort handling</span>
+`useSort` hook observes changes of `sortType` in global store (context). In `Sort`, `SortButton` `onClick` event changes global `sortType` value, which triggers resort of `ListView` local store. Default sort value = `undefined`. Double click on the same `sortType` changes order descending (`orderDSC=true`) => ascending(`orderDSC=false`)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Folders structure
+```
+src
+  |____ components
+  |   |____SomeComponent
+  |       |____css
+  |           |____ styles.module.scss
+  |           |____ styles.module.css
+  |       |____ tests
+  |       |____ components
+  |           |____ SomeSubComponent.js
+  |       |____ SomeComponent.js
+  |____ context
+  |   |____ ContextFile.js
+  |____ hooks
+  |   |____ useCustomHook.js
+  |____ testUtils
+  |   |____ someMock.js
+  |____ utils
+      |____ someUtil.js
 
-### `npm run build`
+```
+##### jsconfig.json for Absolute path
+```
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Dev dependancies
+```
+  "@testing-library/react": "^8.0.5",
+  "@types/jest": "^24.0.15",
+  "enzyme": "^3.10.0",
+  "enzyme-adapter-react-16": "^1.14.0",
+  "enzyme-to-json": "^3.3.5"
+```
+SASS compiler for VSCode
+https://github.com/ritwickdey/vscode-live-sass-compiler
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Responsive layout
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Achieved using combination of `css-grid`
+```
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+```
+and `@media` breakpoints changing bodyPadding css variable
+```
+@media (min-width: 500px) {
+  :root {
+    --bodyPadding: 2rem 2rem;
+  }
+}
+```
 
-### `npm run eject`
+### TODOs if I had more time
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+More tests
+CSS animations
+Decompose Card.module.scss
+Add Filter to filter list items

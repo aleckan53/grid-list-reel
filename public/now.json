@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias": "grid-list",
+  "name": "grid-list",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+  ]
+}

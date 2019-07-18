@@ -22,7 +22,7 @@ const ListView = () => {
   // loads data from API and updates local/global data
   const { isLoading } = useAPI(setData);
 
-  // handles search
+  // 'useSearch' handles search
   useEffect(() => {
     const term = searchTerm.toLowerCase();
     const filterd = store.filter(item => item.name.toLowerCase().includes(term));
@@ -33,7 +33,7 @@ const ListView = () => {
     setData(filterd);
   }, [searchTerm]);
 
-  // observes changes of sort and order
+  // 'useSort' observes changes of sort and order
   useEffect(() => {
     const items = [...data];
     items.sort((a, b) => sortBy[sortType](a, b, orderDSC));
