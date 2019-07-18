@@ -4,6 +4,7 @@ import DataContext from 'context/DataContext';
 import { Search, Sort, List } from 'components';
 import { useAPI } from 'hooks';
 import sortBy from 'utils/sortBy';
+import styles from './css/ListView.module.css';
 
 const ListView = () => {
   const { 
@@ -41,18 +42,20 @@ const ListView = () => {
   }, [sortType, orderDSC]);
 
   return (
-    <section>
-      <Search
-        setSearchTerm={setSearchTerm}/>
-      <Sort 
-        orderDSC={orderDSC}
-        sortType={sortType}
-        setOrderDSC={setOrderDSC}      
-        setSortType={setSortType}/>
+    <>
+      <section className={styles.top}>
+        <Search
+          setSearchTerm={setSearchTerm}/>
+        <Sort 
+          orderDSC={orderDSC}
+          sortType={sortType}
+          setOrderDSC={setOrderDSC}      
+          setSortType={setSortType}/>
+      </section>
       <List 
         data={data} 
         isLoading={isLoading}/>
-    </section>
+    </>
   );
 };
 

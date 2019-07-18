@@ -1,10 +1,10 @@
 .list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   -ms-grid-rows: 180px;
       grid-template-rows: 180px;
-  grid-column-gap: 1rem;
+  grid-gap: 1rem;
 }
 /*# sourceMappingURL=List.module.css.map */

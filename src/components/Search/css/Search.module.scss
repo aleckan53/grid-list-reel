@@ -9,6 +9,7 @@ $green: var(--green);
   height: 35px;
   width: 100%;
   position: relative;
+  margin-bottom: 1rem;
 
   .bar {
     height: 100%;
@@ -33,9 +34,8 @@ $green: var(--green);
 
     &[data-spin='true'] {
       width: 95%;
-      transition: 1.2s ease;
+      transition: all 1.2s ease;
     }
   }
 }
-
 

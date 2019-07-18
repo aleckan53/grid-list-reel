@@ -2,6 +2,7 @@
   height: 35px;
   width: 100%;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .search .bar {
@@ -28,7 +29,7 @@
 
 .search .load[data-spin='true'] {
   width: 95%;
-  -webkit-transition: 1.2s ease;
-  transition: 1.2s ease;
+  -webkit-transition: all 1.2s ease;
+  transition: all 1.2s ease;
 }
 /*# sourceMappingURL=Search.module.css.map */
