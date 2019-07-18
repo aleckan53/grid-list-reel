@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 const useToggle = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggled, setToggled] = useState(false);
 
   const onClick = () => {
-    setToggle(!toggle);
+    setToggled(!toggled);
   };
 
   return {
-    'data-toggle': toggle, onClick
+    toggled, onClick
   };
 };
 

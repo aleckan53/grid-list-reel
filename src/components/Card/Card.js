@@ -7,7 +7,7 @@ import DataContext from 'context/DataContext';
 
 const Card = ({ data }) => {
 
-  const { "data-toggle": viewMore, onClick: toggleDropDown } = useToggle();
+  const { toggled: viewMore, onClick: toggleDropDown } = useToggle();
 
 
   // collapses drop down if list resorted or reorderd

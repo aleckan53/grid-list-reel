@@ -11,7 +11,7 @@ import {
 
 const Details = ({ data, classes }) => {
 
-  const { "data-toggle": toggled, onClick } = useToggle();
+  const { toggled, onClick } = useToggle();
   const handleInput = useInput();
 
   const { container, controls } = classes;

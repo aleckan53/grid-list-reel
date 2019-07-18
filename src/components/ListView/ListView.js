@@ -5,7 +5,7 @@ import { useAPI, useSearchTerm, useSort, useOrder } from 'hooks';
 import sortBy from 'utils/sortBy';
 
 const ListView = () => {
-  const { store } = useContext(DataContext);
+  const { store, setOrderDSC, setSortType, sortType, orderDSC } = useContext(DataContext);
   const [data, setData] = useState([]);
 
   // loads data from API and updates local/global data
@@ -20,10 +20,8 @@ const ListView = () => {
     setData(filterd);
   }, [searchTerm]);
 
-  // handles sort and order
-  const { sortType, setSortType } = useSort();
-  const { orderDSC, setOrderDSC } = useOrder();
-
+  // observes changes of sort and order
+  
   useEffect(() => {
     const items = [...data];
     items.sort((a, b) => sortBy[sortType](a, b, orderDSC));
@@ -39,7 +37,9 @@ const ListView = () => {
         sortType={sortType}
         setOrderDSC={setOrderDSC}      
         setSortType={setSortType}/>
-      <List data={data} isLoading={isLoading}/>
+      <List 
+        data={data} 
+        isLoading={isLoading}/>
     </section>
   );
 };
