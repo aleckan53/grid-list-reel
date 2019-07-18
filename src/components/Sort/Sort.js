@@ -13,8 +13,6 @@ const Sort = ({ sortType, setSortType, orderDSC, setOrderDSC }) => {
   const handleToggle = useToggle();
   const toggled = handleToggle["data-toggle"];
   
-  // const { sort, orderDSC, sortType } = useSortType();
-
   // const showArrow = (name) => 
   //   (!orderDSC && sortType === name) || (sortType !== name)
   //     ? <Down/>
