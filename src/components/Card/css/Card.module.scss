@@ -28,6 +28,7 @@ $green: var(--green);
 
   &.expand {
     grid-template-rows: 80px auto auto;
+    grid-row-end: span 2;
   }
 
   .img {
@@ -175,7 +176,7 @@ $green: var(--green);
     border: none;
     position: relative;
     outline: none;
-    font-size: 2vw;
+    font-size: .8rem;
 
     &::after {
       content: '';
