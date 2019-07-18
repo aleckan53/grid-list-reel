@@ -2,6 +2,9 @@
 
 <a href='https://grid-list.olegakan5326.now.sh'>LIVE DEMO</a>
 
+React Context API is used for global state mangement (Redux alternative).
+
+
 ### Components stucture
 <img src='./readme/tree.jpeg'/>
 

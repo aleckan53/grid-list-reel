@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useToggle, useInput } from 'hooks';
 import Range from './Range';
-
 import DataContext from 'context/DataContext';
 import { 
   IoMdOptions as Options,
@@ -37,7 +36,7 @@ const Details = ({ data, classes }) => {
           </>} 
       </div>
     </div>
-  )
+  );
 };
 
 export default Details;

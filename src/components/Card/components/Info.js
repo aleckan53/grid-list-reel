@@ -1,5 +1,4 @@
 import React from 'react';
-
 import kFormatter from 'utils/kFormatter';
 
 const Info = ({ data, className }) => {
