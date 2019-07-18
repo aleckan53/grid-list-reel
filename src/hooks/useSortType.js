@@ -22,7 +22,9 @@ const useSortType = () => {
       setOrderDSC(false);
     }
 
-    const sorted = store.sort((a, b) => sortBy[selectedSort](a, b, order));
+    const sortingFn = (...args) => sortBy[selectedSort](...args);
+
+    const sorted = store.sort((a, b) => sortingFn(a, b, order));
 
     // updating store
     setStore(sorted);

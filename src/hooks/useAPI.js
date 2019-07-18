@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import DataContext from 'context/DataContext';
 
-const defaultContextProps = {
-  store: [],
-  setStore: () => {},
-}
-
-const useAPI = (fetchData, context = defaultContextProps, setParentState) => {
+const useAPI = (fetchData, setParentState) => {
   const [isLoading, setIsLoading] = useState(true);
-  const { store, setStore } = context;
+  const { store, setStore } = useContext(DataContext);
 
   const effect = useEffect(() => {
     if(!store.length) {

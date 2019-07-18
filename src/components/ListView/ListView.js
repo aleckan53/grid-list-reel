@@ -1,23 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import DataContext from 'context/DataContext';
 import { fetchData } from 'service';
 import { Search, Sort, List } from 'components';
 import { useAPI, useLocalData, useSearchTerm } from 'hooks';
 
 const ListView = () => {
-  const context = useContext(DataContext);
-  // handles searching
-  const { searchTerm, setSearchTerm, getResult } = useSearchTerm();
+  const { store } = useContext(DataContext);
+  const [data, setData] = useState([]);
 
-  // initializes local data state
-  // manipulates state trough dependancies array
-  const { data, setData } = useLocalData(
-    [searchTerm, context.sortType, context.orderDSC, context.store], getResult
-  );
+  // handles search
+  const { searchTerm, setSearchTerm } = useSearchTerm();
+
+  useEffect(() => {
+    const term = searchTerm.toLowerCase();
+    const filterd = store.filter(item => item.name.toLowerCase().includes(term))
+    setData(filterd);
+  }, [searchTerm])
 
   // handles data loading (API request || context)
   // updates local state (data)
-  const { isLoading } = useAPI(fetchData, context, setData);
+  const { isLoading } = useAPI(fetchData, setData);
 
   return (
     <section>
