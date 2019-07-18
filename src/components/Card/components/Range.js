@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { IoMdCheckmark as Confirm, IoMdClose as Cancel } from 'react-icons/io';
+import { IoMdClose as Cancel } from 'react-icons/io';
 import DataContext from 'context/DataContext';
 
 const Range = ({ perDay, id, onClick, handleInput }) => {
@@ -20,10 +20,10 @@ const Range = ({ perDay, id, onClick, handleInput }) => {
       <input 
         defaultValue={perDay}
         type='range' 
-        min={min} 
+        min={min ? min : 1} 
         max={max} 
         onInput={onChange}/>
-      <button onClick={handleConfirm}><span>${ value || perDay }</span><Confirm/></button>
+      <button onClick={handleConfirm}><span>${ value || perDay }</span></button>
       <button onClick={onClick}><Cancel/></button>
     </div>
   );

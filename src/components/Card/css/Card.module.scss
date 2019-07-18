@@ -17,7 +17,7 @@ $green: var(--green);
   margin-bottom: $padding;
 
   display: grid;
-  grid-template-columns: 25vw auto 25vw;
+  grid-template-columns: 25% auto 20%;
   grid-template-rows: 80px 0 auto;
   grid-column-gap: $padding;
   grid-row-gap: $padding;
@@ -48,7 +48,7 @@ $green: var(--green);
     font-size: .8rem;
 
     h3 {
-      font-size: 4vw;
+      font-size: 1.2rem;
     }
   }
 
@@ -175,6 +175,7 @@ $green: var(--green);
     border: none;
     position: relative;
     outline: none;
+    font-size: 2vw;
 
     &::after {
       content: '';

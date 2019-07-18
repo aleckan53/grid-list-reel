@@ -27,7 +27,7 @@ const Details = ({ data, classes }) => {
         {toggled 
           ? <Range perDay={data.perDay} id={data.id} handleInput={handleInput} onClick={onClick}/> 
           : <>
-            <button onClick={onClick}><Options/><span>Save faster</span></button>
+            <button onClick={onClick}><Options/><span>Edit</span></button>
             <button 
               onClick={() => updateItem(data.id, 'status', data.status === 'active' ? 'paused' : 'active')}>
               {data.status !== 'active'

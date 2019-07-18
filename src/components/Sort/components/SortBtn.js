@@ -7,7 +7,7 @@ const SortBtn = ({ orderDSC, sortType, onClick, name }) => {
       onClick={onClick} 
       data-active={sortType === name}
       data-arrow={sortType === name && !orderDSC ? 'up' : 'down'}>
-      $ a day
+      {name === 'progress' ? '%' : name}
     </button>
   );
 };

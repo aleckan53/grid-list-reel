@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useState, useEffect } from 'react';
 import DataContext from 'context/DataContext';
 import { Search, Sort, List } from 'components';
@@ -24,6 +25,10 @@ const ListView = () => {
   useEffect(() => {
     const term = searchTerm.toLowerCase();
     const filterd = store.filter(item => item.name.toLowerCase().includes(term));
+    if (sortType) {
+      filterd.sort((a, b) => sortBy[sortType](a, b, orderDSC));
+    }
+
     setData(filterd);
   }, [searchTerm]);
 

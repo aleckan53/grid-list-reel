@@ -39,6 +39,7 @@
   height: 100%;
   position: absolute;
   right: 10%;
+  top: 0;
 }
 
 .sort button:not(.toggle)[data-active='true']::after {
