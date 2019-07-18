@@ -2,26 +2,29 @@
 
 <a href='https://grid-list.olegakan5326.now.sh'>LIVE DEMO</a>
 
-### Structure
-
-#### Components stucture
+### Components stucture
 <img src='./readme/tree.jpeg'/>
 
-#### Data flow
+### Data flow
 <img src='./readme/data.jpeg'/>
 
-#####<span style='background: rgba(0,100,0,.4)'><strong>First render</strong></span>
+<strong>First render</strong> green arrow<br/>
 1. List view fetches data from mock API server
 2. API reponse updates ListView local and global (context) data stores
-3. <span style='background: rgba(200,100,0,.4)'>Finnaly</span> ListView maps it's local state and renders Cards
+3. <strong>Finnaly</strong> ListView maps it's local state and renders Cards
 
-#####<span style='background: rgba(100,0,200,.4)'><strong>Search handling</strong></span>
-`useSearch` hook observes `onChange` event of `Search` (user typing). Once typing is done, filters global store based on typed search term and updates `ListView` local data store with .6s delay (resets on every key press, delay value passed by argument to `useInput` in `Search`)
+<strong>Search handling</strong> purple arrow<br/>
+1. In `Search` `onChange` event updates `searchTerm` locally in `useInput` hook.    
+2. Once typing is done, updates global `searchTerm` value in context with .6s delay (resets on every key press, delay value passed by argument to `useInput` in `Search`). ListView `useSearch` hook reacts on `searchTerm` value change and filters global `store` items to find a string match. Then updates `ListView` local store 
+3. <strong>Finnaly</strong> ListView maps it's local state and renders Cards
  
-<span style='background: rgba(0,100,255,.4)'><strong>Sort handling</strong></span>
-`useSort` hook observes changes of `sortType` in global store (context). In `Sort`, `SortButton` `onClick` event changes global `sortType` value, which triggers resort of `ListView` local store. Default sort value = `undefined`. Double click on the same `sortType` changes order descending (`orderDSC=true`) => ascending(`orderDSC=false`)
+<strong>Sort handling</strong> blue arrow<br/>
+1. In `Sort`, `SortButton` `onClick` event changes global `sortType` value.
+2. `useSort` hook in `ListView` observes changes of `sortType` value in global store (context). Resorts when the `sortType` value changes.
+Default `undefined`. Double click on the same `sortType` changes order descending (`orderDSC=true`) to ascending (`orderDSC=false`)
+3. <strong>Finnaly</strong> ListView maps it's local state and renders Cards
 
-#### Folders structure
+### Folders structure
 ```
 src
   |____ components
@@ -43,7 +46,7 @@ src
       |____ someUtil.js
 
 ```
-##### jsconfig.json for Absolute path
+#### jsconfig.json for Absolute path
 ```
 {
   "compilerOptions": {
