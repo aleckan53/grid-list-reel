@@ -6,6 +6,7 @@ import useSortType from './useSortType';
 import useToggle from './useToggle';
 import useProgress from './useProgress';
 import useSort from './useSort';
+import useOrder from './useOrder';
 
 export {
   useAPI,
@@ -16,4 +17,5 @@ export {
   useToggle,
   useProgress,
   useSort,
+  useOrder,
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './css/Sort.module.css';
-import { useToggle, useSortType } from 'hooks';
+import { useToggle } from 'hooks';
 import { 
   IoMdFunnel as Bars,
   IoMdClose as Close,
@@ -9,7 +9,7 @@ import {
 } from 'react-icons/io';
 
 
-const Sort = ({ setSortType }) => {
+const Sort = ({ sortType, setSortType, orderDSC, setOrderDSC }) => {
   const handleToggle = useToggle();
   const toggled = handleToggle["data-toggle"];
   
@@ -23,6 +23,12 @@ const Sort = ({ setSortType }) => {
   const handleClick = e => {
     const selected = e.target.dataset.type;
     setSortType(selected);
+
+    if(selected === sortType) {
+      setOrderDSC(!orderDSC);
+    } else {
+      setOrderDSC(true);
+    }
   };
 
   return (
