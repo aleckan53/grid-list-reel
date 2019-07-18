@@ -135,8 +135,15 @@ $green: var(--green);
         align-items: center;
   
         button {
-          border: none;
-          width: 10%;
+          width: 15%;
+          display: flex;
+          justify-content: space-evenly;
+          padding: 0 5px;
+
+          span {
+            width: 50%;
+            display: block;
+          }
 
           svg {
             width: 80%;
@@ -153,7 +160,7 @@ $green: var(--green);
         }
 
         input[type='range'] {
-          width: 70%;
+          width: 60%;
         }
       }
 

@@ -30,6 +30,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.sort button:not(.toggle)::after {
+  content: '';
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  right: 10%;
+}
+
+.sort button:not(.toggle)[data-active='true']::after {
+  background: green;
+}
+
+.sort button:not(.toggle)[data-arrow='up']::after {
+  -webkit-clip-path: polygon(50% 30%, 0 50%, 100% 50%);
+          clip-path: polygon(50% 30%, 0 50%, 100% 50%);
+}
+
+.sort button:not(.toggle)[data-arrow='down']::after {
+  -webkit-clip-path: polygon(50% 70%, 0 50%, 100% 50%);
+          clip-path: polygon(50% 70%, 0 50%, 100% 50%);
 }
 
 .sort button {

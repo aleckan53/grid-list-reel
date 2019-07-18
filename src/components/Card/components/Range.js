@@ -5,7 +5,7 @@ import DataContext from 'context/DataContext';
 const Range = ({ perDay, id, onClick, handleInput }) => {
   const context = useContext(DataContext);
 
-  const { onChange } = handleInput;
+  const { onChange, value } = handleInput;
 
   const max = Math.floor(perDay * 2);
   const min = Math.floor(perDay / 2);
@@ -23,7 +23,7 @@ const Range = ({ perDay, id, onClick, handleInput }) => {
         min={min} 
         max={max} 
         onInput={onChange}/>
-      <button onClick={handleConfirm}><Confirm/></button>
+      <button onClick={handleConfirm}><span>${ value || perDay }</span><Confirm/></button>
       <button onClick={onClick}><Cancel/></button>
     </div>
   );

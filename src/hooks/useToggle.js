@@ -3,7 +3,7 @@ import DataContext from 'context/DataContext';
 
 
 const useToggle = (collapse=true) => {
-  const context = useContext(DataContext);
+  const { searchTerm, sortType, orderDSC } = useContext(DataContext);
   const [toggled, setToggled] = useState(false);
 
   const onClick = () => {
@@ -14,7 +14,7 @@ const useToggle = (collapse=true) => {
     if(collapse) {
       setToggled(false);
     }
-  }, [context.searchTerm, context.sortType, context.orderDSC])
+  }, [searchTerm, sortType, orderDSC])
 
   return {
     toggled, onClick

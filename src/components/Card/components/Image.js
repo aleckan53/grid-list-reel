@@ -9,4 +9,4 @@ const Image = ({ img, className }) => {
   return <div className={className} style={styles}/>;
 };
 
-export default Image
+export default Image;

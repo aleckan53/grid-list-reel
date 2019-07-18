@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useInput = (name='', cb, delay=600) => {
+const useInput = (name='', cb, delay=0) => {
   const [value, setValue] = useState('');
   const [timer, setTimer] = useState(null);
 

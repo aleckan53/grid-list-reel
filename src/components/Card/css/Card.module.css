@@ -171,8 +171,19 @@
 }
 
 .card .details .controls [data-name='range'] button {
-  border: none;
-  width: 10%;
+  width: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0 5px;
+}
+
+.card .details .controls [data-name='range'] button span {
+  width: 50%;
+  display: block;
 }
 
 .card .details .controls [data-name='range'] button svg {
@@ -189,7 +200,7 @@
 }
 
 .card .details .controls [data-name='range'] input[type='range'] {
-  width: 70%;
+  width: 60%;
 }
 
 .card .toggle {

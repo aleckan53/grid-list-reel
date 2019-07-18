@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useToggle, useInput } from 'hooks';
 import Range from './Range';
 
