@@ -1,7 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
+import { fetchData } from 'service'; 
 import DataContext from 'context/DataContext';
 
-const useAPI = (fetchData, setParentState) => {
+const useAPI = (setParentState) => {
   const [isLoading, setIsLoading] = useState(true);
   const { store, setStore } = useContext(DataContext);
 
