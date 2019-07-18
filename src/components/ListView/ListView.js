@@ -42,7 +42,8 @@ const ListView = () => {
 
   return (
     <section>
-      <Search setSearchTerm={setSearchTerm}/>
+      <Search
+        setSearchTerm={setSearchTerm}/>
       <Sort 
         orderDSC={orderDSC}
         sortType={sortType}

@@ -15,6 +15,7 @@ $green: var(--green);
   border-radius: $border-radius;
   box-shadow: $shadow $black30;
   margin-bottom: $padding;
+  height: 172px;
 
   display: grid;
   grid-template-columns: 25% auto 20%;
@@ -29,6 +30,7 @@ $green: var(--green);
   &.expand {
     grid-template-rows: 80px auto auto;
     grid-row-end: span 2;
+    height: auto;
   }
 
   .img {

@@ -3,14 +3,39 @@ $black30: var(--black30);
 $black50: var(--black50);
 $padding: 1rem;
 $shadow: var(--shadow);
+$green: var(--green);
 
-.bar {
+.search {
   height: 35px;
   width: 100%;
-  border: $border $black30;
-  border-radius: 10px;
-  padding: 5px 10px;
-  font-size: 1.2rem;
-  margin-bottom: $padding;
-  -webkit-appearance: none;
+  position: relative;
+
+  .bar {
+    height: 100%;
+    width: 100%;
+    border: $border $black30;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    margin-bottom: $padding;
+    -webkit-appearance: none;
+    outline: none;
+  }
+  
+  .load {
+    height: 10%;
+    width: 0%;
+    background: $green;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    border-radius: 10px;
+
+    &[data-spin='true'] {
+      width: 95%;
+      transition: 1.2s ease;
+    }
+  }
 }
+
+

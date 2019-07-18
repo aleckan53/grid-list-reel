@@ -1,5 +1,11 @@
-.bar {
+.search {
   height: 35px;
+  width: 100%;
+  position: relative;
+}
+
+.search .bar {
+  height: 100%;
   width: 100%;
   border: var(--border) var(--black30);
   border-radius: 10px;
@@ -7,5 +13,22 @@
   font-size: 1.2rem;
   margin-bottom: 1rem;
   -webkit-appearance: none;
+  outline: none;
+}
+
+.search .load {
+  height: 10%;
+  width: 0%;
+  background: var(--green);
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  border-radius: 10px;
+}
+
+.search .load[data-spin='true'] {
+  width: 95%;
+  -webkit-transition: 1.2s ease;
+  transition: 1.2s ease;
 }
 /*# sourceMappingURL=Search.module.css.map */
